@@ -75,6 +75,14 @@ public class FirstClass {
         }
         System.out.println(min);
 
+        a += 2; //a = a + 2
+        a = 0;
+        int y;
+        y = a++;
+        y = ++a;
+
+        y = a % 2;
+
         //<,>,==
         //<=, >=
         //!= - не равно
