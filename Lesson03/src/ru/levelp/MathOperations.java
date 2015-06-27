@@ -8,7 +8,7 @@ public class MathOperations {
     //первая строка - сигнатура метода
     public int sum(int a, int b) { //a, b - параметры метода sum
         int result = a + b;
-        a = 10;
+        a = 11;
         b = 40;
         return result;
     }

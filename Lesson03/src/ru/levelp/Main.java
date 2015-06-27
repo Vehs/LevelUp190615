@@ -25,7 +25,7 @@ public class Main {
 
         MathOperations oper = new MathOperations();
         int a = 5;
-        int b = 8;
+        int b = 9;
         int res = oper.sum(a, b); //5, 8 - аргументы метода sum
         System.out.println(res);
         System.out.println(a);

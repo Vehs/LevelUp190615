@@ -27,7 +27,7 @@ public class Human {
         String s1 = "bla";
         String s2 = "bla";
 
-        if (name.equals(book[i].name)) {
+        if (name.equals(s2)) {
             System.out.println("РАВНЫ");
         }
     }
