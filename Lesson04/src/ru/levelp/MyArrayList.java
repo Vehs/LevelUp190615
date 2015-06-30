@@ -47,7 +47,7 @@ public class MyArrayList {
         int[] newObjects = new int[size - 1];
         for (int i = 0; i < index; i++) {
             newObjects[i] = objects[i];
-        }
+        }//
         for (int i = index + 1; i < size; i++) {
             newObjects[i - 1] = objects[i];
         }
