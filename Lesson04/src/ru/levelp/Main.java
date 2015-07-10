@@ -45,26 +45,27 @@ public class Main {
 //        //char - Character
 //        //boolean - Boolean
 //
-//        MyLinkedList intLinkList = new MyLinkedList();
-//
+        MyLinkedList<Integer> intLinkList = new MyLinkedList<Integer>();
+
 //        intLinkList.add(0);
 //        intLinkList.add(1);
 //        intLinkList.add(2);
 //        intLinkList.add(3);
+        intLinkList.add(356);
+
+        System.out.println(intLinkList.get(0));
+
+//        ArrayList<String> arrayList = new ArrayList<String>();
+//        LinkedList<String> linkedList = new LinkedList<String>();
 //
-//        System.out.println(intLinkList.get(3));
-
-        ArrayList<String> arrayList = new ArrayList<String>();
-        LinkedList<String> linkedList = new LinkedList<String>();
-
-        for (int i = 0; i < 10000000; i++) {
-            //arrayList.add("hello");
-            linkedList.add("hello");
-        }
-        System.out.println("added");
-        for (int i = 0; i < linkedList.size(); i++) {
-            String s = linkedList.get(i);
-        }
+//        for (int i = 0; i < 10000000; i++) {
+//            //arrayList.add("hello");
+//            linkedList.add("hello");
+//        }
+//        System.out.println("added");
+//        for (int i = 0; i < linkedList.size(); i++) {
+//            String s = linkedList.get(i);
+//        }
     }
 
     /*

@@ -11,6 +11,8 @@ public class MyArrayList {
         size = 0;
     }
 
+//    Contact c = new Contact(name,email,phone);
+//    book.add(c);
     public void add(int obj) {
         //1) Создаем массив на 1 размером больше
         //2) Копируем из objects в новый массив все элементы

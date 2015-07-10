@@ -3,24 +3,24 @@ package ru.levelp;
 /**
  * Created by vladimir on 30.06.15.
  */
-public class MyLinkedList {
-    Node head;
+public class MyLinkedList<T> {
+    Node<T> head;
     int size;
 
     public MyLinkedList() {
         size = 0;
     }
 
-    public void add(int obj) {
+    public void add(T obj) {
         if (size == 0) {
-            head = new Node(obj);
+            head = new Node<T>(obj);
         } else {
-            Node current = head;
+            Node<T> current = head;
             while (current.next != null) {
                 current = current.next;
             }
             //current - последний элемент списка
-            current.next = new Node(obj);
+            current.next = new Node<T>(obj);
         }
         size++;
     }
@@ -31,7 +31,7 @@ public class MyLinkedList {
         if (index == 0) {
             head = head.next;
         } else {
-            Node current = head;
+            Node<T> current = head;
             for (int i = 0; i < index-1; i++) {
                 current = current.next;
             }
@@ -41,8 +41,8 @@ public class MyLinkedList {
         return true;
     }
 
-    public int get(int index) {
-        Node current = head;
+    public T get(int index) {
+        Node<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
