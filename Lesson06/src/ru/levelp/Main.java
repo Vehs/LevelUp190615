@@ -7,7 +7,8 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String[] args) {
-        new GUI().buildGUI();
+        new ChildGUI().buildGUI(); //blueGUI
+
 
 //        TestInterface t = new TestClass();
 //        TestClass test1 = new TestClass();

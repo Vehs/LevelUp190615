@@ -8,12 +8,16 @@ import java.awt.event.ActionListener;
 /**
  * Created by vladimir on 10.07.15.
  */
-public class GUI {
-    private MyButton[] b;
-    private boolean isXStep = true;
+abstract public class GUI {
+    protected MyButton[] b;
+    protected boolean isXStep = true;
+    protected JLabel labelTurn;
+    protected JFrame frame;
+    protected GridLayout grid;
+    protected JPanel mainPanel;
 
     public void buildGUI() {
-        JFrame frame = new JFrame("TicTacToe");
+        frame = new JFrame("TicTacToe");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100,100,300,300);
 
@@ -39,6 +43,7 @@ public class GUI {
         newGameMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //newGame();
                 for (int i = 0; i < b.length; i++) {
                     b[i].setText("");
                     b[i].setEnabled(true);
@@ -60,28 +65,61 @@ public class GUI {
         bar.add(fileMenu);
 
         //Создание кнопок
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(3,3));
+        mainPanel = new JPanel();
+        grid = new GridLayout(3,3);
+        mainPanel.setLayout(grid);
         b = new MyButton[9];
-        StepListener stepListener = new StepListener();
+        StepListener stepListener = new StepListener(this);
         for (int i = 0; i < b.length; i++) {
             b[i] = new MyButton("");
             b[i].addActionListener(stepListener);
             mainPanel.add(b[i]);
         }
 
+        labelTurn = new JLabel("X turn");
+
         frame.setJMenuBar(bar);
+        frame.add(BorderLayout.NORTH, labelTurn);
         frame.add(BorderLayout.CENTER, mainPanel);
-        frame.setVisible(true);
+    }
+
+
+    public void hasWinner() {
+        //проверка победителя
+        if (b[0].equals("X") && b[1].equals("X") && b[2].equals("X")) {
+            //выйграл Х в первой строке
+        }
+    }
+
+
+    public boolean isXStep() {
+        return isXStep;
+    }
+
+    public void setXStep(boolean isXStep) {
+        this.isXStep = isXStep;
+    }
+
+    public void changeTurnText() {
+        if (isXStep) {
+            labelTurn.setText("X turn");
+        } else {
+            labelTurn.setText("O turn");
+        }
     }
 
     /*
-    1) Добить StepListener
-    2) В классе GUI добавить метод проверки победителя
-    3) При победе выскакивает окно с надписью "X WON" или "O WON"
-        и кнопкой Оk, при нажатии которой окошко закрывается
-        и начинается новая игра
-    4) Сверху, над игровым полем, добавить надпись чей следующий ход
-        ("X turn"/"O turn")
+    ДЗ
+    1) При запуске крестиков ноликов предлагается выбрать тему (JRadioButton)
+    1*) В идеальном варианте реализовать в menuBar пункт, позволяющий
+        переключаться между темами прямо в игре, чтобы игровое поле
+        не пропадало (игра не сбрасывается)
+    2) Все окна игры (About, Winner) должны принимать текущую тему
+    3) Графический интерфейс калькулятора должен быть готов
+        (кнопки цифр, ',', '-/+', +-*\=, С, Backspace)
+    4) Захватить текстовый редактор на занятие
+
      */
+
+
 }
